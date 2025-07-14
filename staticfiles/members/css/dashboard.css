@@ -1065,3 +1065,117 @@ body {
 .btn-avaliar:hover {
     background-color: #594ab5;
 }
+
+/* ======================= PÁGINA DE GERENCIAMENTO DE MEMBROS ======================= */
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.member-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.member-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.member-card-header .user-cell {
+    gap: 12px;
+}
+.member-card-header .user-cell strong {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.member-card-body .tag-cargo {
+    display: inline-block;
+    background-color: #e8e7ff;
+    color: #6a5acd;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.member-card-body .contact-info {
+    color: #6c757d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.member-card-footer {
+    margin-top: auto; /* Empurra para o fundo */
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.tag-nucleo-1 { background-color: #dbeafe; color: #3b82f6; }
+.tag-nucleo-2 { background-color: #dcfce7; color: #22c55e; }
+.tag-nucleo-3 { background-color: #fef3c7; color: #f59e0b; }
+
+/* ======================= PÁGINA DE DETALHE DA MENSAGEM ======================= */
+
+/* O painel principal que contém a mensagem */
+.message-detail-panel {
+    /* Reutiliza o estilo da classe .panel, mas podemos adicionar especificidades */
+    max-width: 900px; /* Limita a largura para melhor leitura em telas grandes */
+    margin: 20px auto; /* Centraliza o painel na área de conteúdo */
+}
+
+/* O cabeçalho da mensagem (De, Email, Data) */
+.message-header {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eef0f4; /* Linha separadora sutil */
+}
+
+.message-header h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.message-header p {
+    font-size: 15px;
+    color: #6c757d; /* Cinza para informações secundárias */
+    margin-bottom: 5px;
+}
+
+.message-header p strong {
+    color: #495057; /* Um cinza um pouco mais escuro para os títulos */
+}
+
+/* Estilo para o link do email */
+.message-header a {
+    color: #6a5acd; /* Cor roxa padrão do dashboard */
+    text-decoration: none;
+}
+
+.message-header a:hover {
+    text-decoration: underline;
+}
+
+/* O corpo principal da mensagem */
+.message-body p {
+    font-size: 16px;
+    line-height: 1.7; /* Aumenta o espaçamento entre linhas para facilitar a leitura */
+    color: #333;
+    white-space: pre-wrap; /* Preserva as quebras de linha e espaços do texto original */
+}

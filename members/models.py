@@ -26,19 +26,41 @@ class Membro(models.Model):
     def is_marketeiro(self):
         # Verifica se este membro está associado ao núcleo de marketing
         return self.membronucleo_set.filter(nucleo__nome='Marketing').exists()
+    
+    def is_admfin(self):
+        # Verifica se este membro está associado ao núcleo de administrativo financeiro
+        return self.membronucleo_set.filter(nucleo__nome='Administrativo Financeiro').exists()
 
     def __str__(self):
         return f"{self.nome}, {self.matricula}, {self.email}"
     
 class Nucleo(models.Model):
+    # 1. Definimos as opções como uma lista de tuplas
+    CATEGORIA_CHOICES = [
+        ('TECNICO', 'Técnico'),
+        ('GESTAO', 'Gestão'),
+    ]
+
     nome = models.CharField(max_length=64)
-    categoria = models.CharField(max_length=8)
+    # 2. Adicionamos o argumento 'choices' ao nosso campo
+    categoria = models.CharField(max_length=8, choices=CATEGORIA_CHOICES)
 
     class Meta:
         verbose_name='Núcleo'
         verbose_name_plural='Núcleos'
+        
     def __str__(self):
         return self.nome
+    
+# class Nucleo(models.Model):
+#     nome = models.CharField(max_length=64)
+#     categoria = models.CharField(max_length=8)
+
+#     class Meta:
+#         verbose_name='Núcleo'
+#         verbose_name_plural='Núcleos'
+#     def __str__(self):
+#         return self.nome
     
 class Cargo(models.Model):
     posicao = models.CharField(max_length=64)
